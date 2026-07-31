@@ -35,7 +35,7 @@ html[dir="rtl"] {
   --font-display: 'Cairo', system-ui, sans-serif;
   --font-body: 'Cairo', 'Inter', system-ui, sans-serif;
 }
-/* when the page is set to chinese
+/* when the page is set to chinese*/
 html[lang="zh"] {
   --font-display: 'Noto Sans SC', system-ui, sans-serif;
   --font-body: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
