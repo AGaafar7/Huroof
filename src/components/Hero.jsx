@@ -1,21 +1,23 @@
+import { useLanguage } from '../i18n/LanguageContext.jsx'
+
 export default function Hero() {
+  const { t } = useLanguage()
+  const h = t.hero
+
   return (
     <section className="hero" id="top">
       <div className="wrap">
         <div className="hero-copy">
           <span className="eyebrow">
-            <span className="arabic">أ ← ي</span> From alef to fluency
+            <span className="arabic">{h.eyebrowAr}</span> {h.eyebrow}
           </span>
           <h1>
-            Learn Arabic the way <span className="accent">native speakers</span> actually teach it
+            {h.titleBefore}<span className="accent">{h.titleAccent}</span>{h.titleAfter}
           </h1>
-          <p className="lede">
-            Huroof is built for learners across Asia starting from zero — real instructors,
-            structured letter-by-letter courses, and a path that shows exactly how far you've come.
-          </p>
+          <p className="lede">{h.lede}</p>
           <div className="hero-actions">
-            <a href="#courses" className="btn btn-primary">Start Your First Lesson</a>
-            <a href="#path" className="btn btn-ghost">See the Learning Path</a>
+            <a href="#courses" className="btn btn-primary">{h.ctaPrimary}</a>
+            <a href="#path" className="btn btn-ghost">{h.ctaGhost}</a>
           </div>
           <div className="hero-trust">
             <div className="avatars">
@@ -24,7 +26,7 @@ export default function Hero() {
               <span>사</span>
               <span>+</span>
             </div>
-            <small><strong>12,400+</strong> learners from Japan, Korea, Indonesia &amp; Vietnam</small>
+            <small><strong>{h.trustStrong}</strong> {h.trustRest}</small>
           </div>
         </div>
 
@@ -33,29 +35,29 @@ export default function Hero() {
             <div className="float-chip chip-streak">
               <span className="dot" />
               <div>
-                <strong>14-day streak</strong>
-                <span>Keep it going</span>
+                <strong>{h.card.streakTitle}</strong>
+                <span>{h.card.streakSub}</span>
               </div>
             </div>
 
             <div className="letter-top">
-              <span className="letter-tag">Lesson 08 · The Alphabet</span>
-              <span className="letter-tag">Beginner</span>
+              <span className="letter-tag">{h.card.lessonTag}</span>
+              <span className="letter-tag">{h.card.levelTag}</span>
             </div>
 
             <div className="letter-big">
               <div className="letter-glyph">ع</div>
               <div className="letter-meta">
-                <div className="name">ʿAyn</div>
-                <div className="sound">A sound made deep in the throat — practice it before "alef"</div>
-                <div className="play">▶ Hear it spoken</div>
+                <div className="name">{h.card.name}</div>
+                <div className="sound">{h.card.sound}</div>
+                <div className="play">▶ {h.card.play}</div>
               </div>
             </div>
 
             <div className="letter-progress">
               <div className="row">
-                <span>Alphabet mastery</span>
-                <span>21 / 28 letters</span>
+                <span>{h.card.progressLabel}</span>
+                <span>{h.card.progressValue}</span>
               </div>
               <div className="progress-track">
                 <div className="progress-fill" style={{ width: '75%' }} />
@@ -65,8 +67,8 @@ export default function Hero() {
             <div className="float-chip chip-mastered">
               <span className="dot" />
               <div>
-                <strong>92% mastered</strong>
-                <span>Nun · ن</span>
+                <strong>{h.card.masteredTitle}</strong>
+                <span>{h.card.masteredSub}</span>
               </div>
             </div>
           </div>

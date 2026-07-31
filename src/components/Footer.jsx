@@ -1,4 +1,9 @@
+import { useLanguage } from '../i18n/LanguageContext.jsx'
+
 export default function Footer() {
+  const { t } = useLanguage()
+  const f = t.footer
+
   return (
     <footer className="footer">
       <div className="wrap">
@@ -11,40 +16,40 @@ export default function Footer() {
                 <span className="ar arabic">حروف</span>
               </div>
             </div>
-            <p>Helping learners across Asia go from the Arabic alphabet to real conversation, one letter at a time.</p>
+            <p>{f.tagline}</p>
           </div>
 
           <div>
-            <h4>Learn</h4>
+            <h4>{f.learn}</h4>
             <ul>
-              <li><a href="#courses">Courses</a></li>
-              <li><a href="#path">Learning path</a></li>
-              <li><a href="#instructors">Instructors</a></li>
+              <li><a href="#courses">{f.learnLinks[0]}</a></li>
+              <li><a href="#path">{f.learnLinks[1]}</a></li>
+              <li><a href="#instructors">{f.learnLinks[2]}</a></li>
             </ul>
           </div>
 
           <div>
-            <h4>Company</h4>
+            <h4>{f.company}</h4>
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#stories">Learner stories</a></li>
+              <li><a href="#">{f.companyLinks[0]}</a></li>
+              <li><a href="#">{f.companyLinks[1]}</a></li>
+              <li><a href="#stories">{f.companyLinks[2]}</a></li>
             </ul>
           </div>
 
           <div>
-            <h4>Support</h4>
+            <h4>{f.support}</h4>
             <ul>
-              <li><a href="#">Help center</a></li>
-              <li><a href="#">Contact us</a></li>
-              <li><a href="#">Pricing</a></li>
+              <li><a href="#">{f.supportLinks[0]}</a></li>
+              <li><a href="#">{f.supportLinks[1]}</a></li>
+              <li><a href="#">{f.supportLinks[2]}</a></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>© 2026 Huroof. All rights reserved.</span>
-          <span>Made for learners across Asia</span>
+          <span>{f.rights}</span>
+          <span>{f.made}</span>
         </div>
       </div>
     </footer>

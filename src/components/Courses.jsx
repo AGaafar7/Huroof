@@ -1,65 +1,39 @@
-const courses = [
-  {
-    glyph: 'ا',
-    theme: 't1',
-    level: 'Beginner',
-    title: 'The Arabic Alphabet, from Scratch',
-    desc: 'All 28 letters, their sounds, and how they connect — built for absolute beginners.',
-    instructor: 'Yusuf A.',
-    duration: '6 weeks',
-    price: 'Free',
-  },
-  {
-    glyph: 'ك',
-    theme: 't2',
-    level: 'Intermediate',
-    title: 'Everyday Conversation',
-    desc: 'Order food, ask directions, and hold a real conversation with confidence.',
-    instructor: 'Layla H.',
-    duration: '8 weeks',
-    price: '$39',
-  },
-  {
-    glyph: 'ق',
-    theme: 't3',
-    level: 'Advanced',
-    title: 'Reading Modern Standard Arabic',
-    desc: 'Move from spoken Arabic to reading news, signage, and everyday text.',
-    instructor: 'Omar S.',
-    duration: '10 weeks',
-    price: '$59',
-  },
-]
+import { useLanguage } from '../i18n/LanguageContext.jsx'
+
+const themes = ['t1', 't2', 't3']
 
 export default function Courses() {
+  const { t } = useLanguage()
+  const c = t.coursesSection
+
   return (
     <section className="section" id="courses">
       <div className="wrap">
         <div className="section-head">
-          <span className="eyebrow">Courses</span>
-          <h2>Pick up where your level actually is</h2>
-          <p>Every course is taught live and on-demand by a native instructor, and maps directly onto the learning path below.</p>
+          <span className="eyebrow">{c.eyebrow}</span>
+          <h2>{c.title}</h2>
+          <p>{c.lede}</p>
         </div>
 
         <div className="courses-grid">
-          {courses.map((c) => (
-            <article className="course-card" key={c.title}>
-              <div className={`course-thumb ${c.theme}`}>
-                <span className="level-pill"><span className="dot" />{c.level}</span>
-                <span className="glyph arabic">{c.glyph}</span>
+          {c.list.map((course, i) => (
+            <article className="course-card" key={course.title}>
+              <div className={`course-thumb ${themes[i]}`}>
+                <span className="level-pill"><span className="dot" />{course.level}</span>
+                <span className="glyph arabic">{course.glyph}</span>
               </div>
               <div className="course-body">
-                <h3>{c.title}</h3>
-                <p>{c.desc}</p>
+                <h3>{course.title}</h3>
+                <p>{course.desc}</p>
                 <div className="course-foot">
                   <div className="instructor">
-                    <span className="avatar">{c.instructor[0]}</span>
+                    <span className="avatar">{course.instructor[0]}</span>
                     <div>
-                      <small>{c.instructor}</small>
-                      <span>{c.duration}</span>
+                      <small>{course.instructor}</small>
+                      <span>{course.duration}</span>
                     </div>
                   </div>
-                  <span className="course-price">{c.price}</span>
+                  <span className="course-price">{course.price}</span>
                 </div>
               </div>
             </article>
