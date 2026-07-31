@@ -326,10 +326,10 @@ html[dir="rtl"] .hero::before { inset: -20% auto auto -10%; }
 .letter-card {
   position: relative;
   background: var(--navy);
-  border-radius: 26px;
+  border-radius: inherit;
   padding: 38px;
   box-shadow: 0 30px 60px -25px rgba(14,42,71,0.55);
-  overflow: hidden;
+  
 }
 .letter-card::after {
   content: "";
