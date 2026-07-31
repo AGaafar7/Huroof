@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 export default function Navbar() {
-  const { t, lang, toggleLang } = useLanguage()
+  const { t, lang, setLang } = useLanguage()
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
 
@@ -29,10 +29,11 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions">
-          <button type="button" className="lang-switch" onClick={toggleLang} aria-label="Switch language">
-            <span className={lang === 'en' ? 'active' : ''}>EN</span>
-            <span className={lang === 'ar' ? 'active' : ''}>ع</span>
-          </button>
+          <div className="lang-switch" role="group" aria-label="Switch language">
+  <button type="button" className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
+  <button type="button" className={lang === 'ar' ? 'active' : ''} onClick={() => setLang('ar')}>ع</button>
+  <button type="button" className={lang === 'zh' ? 'active' : ''} onClick={() => setLang('zh')}>中</button>
+</div>
           <a href="#" className="nav-login">{t.nav.login}</a>
           <a href="#courses" className="btn btn-primary nav-cta">{t.nav.cta}</a>
           <button

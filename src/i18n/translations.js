@@ -188,4 +188,66 @@ export const translations = {
       made: 'صُنع للمتعلمين في آسيا',
     },
   },
+  zh: {
+    nav: { courses: '课程', path: '学习路径', instructors: '导师', stories: '学员故事', login: '登录', cta: '开始免费试听' },
+    hero: {
+      eyebrowAr: 'أ ← ي',
+      eyebrow: '从阿列夫到流利表达',
+      titleBefore: '跟着', titleAccent: '母语者的真实教法', titleAfter: '，学习阿拉伯语',
+      lede: 'Huroof 专为零基础的亚洲学习者打造——真正的母语导师、按字母循序渐进的课程体系，以及清晰展示你进步程度的学习路径。',
+      ctaPrimary: '开始你的第一课', ctaGhost: '查看学习路径',
+      trustStrong: '12,400+', trustRest: '来自日本、韩国、印度尼西亚和越南的学习者',
+      card: {
+        lessonTag: '第8课 · 字母表', levelTag: '初级', name: '阿因（ʿAyn）',
+        sound: '一个从喉咙深处发出的音——在学习"阿列夫"之前先练习它',
+        play: '聆听发音', progressLabel: '字母掌握度', progressValue: '21 / 28 个字母',
+        streakTitle: '连续学习14天', streakSub: '继续保持',
+        masteredTitle: '掌握度92%', masteredSub: '努恩 · ن',
+      },
+    },
+    stats: [
+      { value: '378', label: '本月活跃学习者' },
+      { value: '19', label: '阿拉伯语母语导师' },
+      { value: '86', label: '系统课程单元' },
+      { value: '4.8/5', label: '学员平均评分' },
+    ],
+    coursesSection: {
+      eyebrow: '课程', title: '从你真正的水平开始学习',
+      lede: '每门课程都由母语导师直播或点播教授，并与下方的学习路径直接对应。',
+      list: [
+        { glyph: 'ا', level: '初级', title: '从零开始的阿拉伯字母', desc: '完整的28个字母及其发音，以及它们如何连接——专为完全初学者设计。', instructor: '优素福 A.', duration: '6周', price: '免费' },
+        { glyph: 'ك', level: '中级', title: '日常对话', desc: '点餐、问路，自信地进行真实对话。', instructor: '莱拉 H.', duration: '8周', price: '$39' },
+        { glyph: 'ق', level: '高级', title: '阅读标准阿拉伯语', desc: '从口语过渡到阅读新闻、标识和日常文本。', instructor: '奥马尔 S.', duration: '10周', price: '$59' },
+      ],
+    },
+    pathSection: {
+      eyebrowAr: 'حروف', eyebrow: 'Huroof 学习路径', title: '你学会的每个字母，都是看得见的一步',
+      lede: '你的进度不是一个笼统的百分比条，而是字母表本身——每个字母都会解锁下一阶段的听说读写。',
+      steps: [
+        { glyph: 'ا', label: '阿列夫', sub: '字母表', state: 'done' },
+        { glyph: 'ب', label: '巴', sub: '发音与书写', state: 'done' },
+        { glyph: 'ج', label: '吉姆', sub: '连写规则', state: 'done' },
+        { glyph: 'ن', label: '努恩', sub: '第一批词汇', state: 'current' },
+        { glyph: 'ر', label: '拉', sub: '日常对话', state: 'locked' },
+        { glyph: 'ي', label: '雅', sub: '流利阅读', state: 'locked' },
+      ],
+      noteNum: '21/28', note: '大多数学习者在掌握28个字母中的21个时，就已经能够自信地进行对话——你已经非常接近了。',
+    },
+    storiesSection: {
+      eyebrow: '学员故事', title: '他们也是从阿列夫开始的', lede: '这些学习者从零阿拉伯语基础和一台笔记本电脑开始，取得了真实的进步。',
+      list: [
+        { quote: '"六个月前我几乎读不出一个单词。现在我在安曼可以直接读懂路牌，不用在脑子里先翻译。"', name: 'Haruto K.', place: '日本大阪 · 阅读课程' },
+        { quote: '"字母学习路径让我一下子明白了——我能清楚看到自己还需要练习哪些发音，而不是靠猜。"', name: 'Minji P.', place: '韩国釜山 · 初级课程' },
+        { quote: '"我的导师每周都会当面纠正我的发音。仅这一点就比用一年的App更有价值。"', name: 'Siti R.', place: '印度尼西亚雅加达 · 对话课程' },
+      ],
+    },
+    ctaSection: { title: '第一节阿拉伯语课程免费——无需信用卡', lede: '加入12,400多名亚洲学习者的行列，本周就能匹配到一位母语导师。', primary: '开始免费试听', ghost: '咨询顾问' },
+    footer: {
+      tagline: '帮助亚洲学习者从阿拉伯字母表逐步走向真正的对话，一个字母，一个字母地积累。',
+      learn: '学习', learnLinks: ['课程', '学习路径', '导师'],
+      company: '公司', companyLinks: ['关于我们', '招聘', '学员故事'],
+      support: '支持', supportLinks: ['帮助中心', '联系我们', '价格'],
+      rights: '© 2026 Huroof。保留所有权利。', made: '为亚洲学习者而打造',
+    },
+  },
 }
