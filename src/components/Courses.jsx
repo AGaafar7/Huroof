@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
-
-const themes = ['t1', 't2', 't3']
+import { getCourses } from '../data/courses.js'
 
 export default function Courses() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const c = t.coursesSection
+  const preview = getCourses(lang).slice(0, 3)
 
   return (
     <section className="section" id="courses">
@@ -16,11 +17,14 @@ export default function Courses() {
         </div>
 
         <div className="courses-grid">
-          {c.list.map((course, i) => (
-            <article className="course-card" key={course.title}>
-              <div className={`course-thumb ${themes[i]}`}>
-                <span className="level-pill"><span className="dot" />{course.level}</span>
+          {preview.map((course) => (
+            <article className="course-card" key={course.id}>
+              <div className={`course-thumb ${course.theme}`}>
+                <span className="level-pill"><span className="dot" />{course.levelLabel}</span>
                 <span className="glyph arabic">{course.glyph}</span>
+                <span className={`price-badge ${course.type === 'free' ? 'is-free' : 'is-paid'}`}>
+                  {course.type === 'free' ? t.portal.priceFree : `$${course.price}`}
+                </span>
               </div>
               <div className="course-body">
                 <h3>{course.title}</h3>
@@ -30,14 +34,17 @@ export default function Courses() {
                     <span className="avatar">{course.instructor[0]}</span>
                     <div>
                       <small>{course.instructor}</small>
-                      <span>{course.duration}</span>
+                      <span>{course.lessons} {t.portal.lessonsLabel}</span>
                     </div>
                   </div>
-                  <span className="course-price">{course.price}</span>
                 </div>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="courses-cta">
+          <Link to="/portal" className="btn btn-ghost">{c.viewAll}</Link>
         </div>
       </div>
     </section>
